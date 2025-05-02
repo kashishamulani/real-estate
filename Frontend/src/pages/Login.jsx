@@ -35,9 +35,9 @@ export default function AuthPage() {
           data = await dispatch(signupUser(formData)).unwrap();
         }
   
-        if (data?.role === "vendor") navigate("/vendor-dashboard");
-        else if (data?.role === "user") navigate("/user-dashboard");
-        else if (data?.role === "admin") navigate("/admin-dashboard");
+        if (data?.role === "vendor") navigate("/VendorDashboard");
+        else if (data?.role === "user") navigate("/UserDashboard");
+        else if (data?.role === "admin") navigate("/AdminDashboard");
       } catch (err) {
         console.error(err);
       } finally {

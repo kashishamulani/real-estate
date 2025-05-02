@@ -20,7 +20,7 @@ const AuthForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const error = useSelector((state) => state.auth.error);
-
+   console.log("it is a signup")
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -37,7 +37,7 @@ const AuthForm = () => {
       }
 
       if (data?.role === "vendor") navigate("/vendor-dashboard");
-      else if (data?.role === "user") navigate("/user-dashboard");
+      else if (data?.role === "user") navigate("/AdminDashboard");
       else if (data?.role === "admin") navigate("/admin-dashboard");
     } catch (err) {
       console.error(err);

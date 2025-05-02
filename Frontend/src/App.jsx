@@ -25,6 +25,7 @@ function App() {
             <Route path="/vendor-dashboard" element={<PrivateRoute allowedRoles={["vendor"]}><Vendordashbaord /></PrivateRoute>} />
             <Route path="/user-dashboard" element={<PrivateRoute allowedRoles={["user"]}><Userdashbaord /></PrivateRoute>} />
             <Route path="*" element={<Navigate to="/auth" />} />
+            
         </Routes>
     </Router>
 );

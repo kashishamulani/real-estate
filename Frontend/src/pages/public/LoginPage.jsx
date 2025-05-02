@@ -6,7 +6,9 @@ import { SignupForm } from "@/components/signup-form";
 import loginImage from '../../../public/images/login-page-02.jpg';
 import { loginUser, signupUser } from "../../redux/authSlice.js";
 
+
 const LoginPage = () => {
+  console.log("It is a login page")
   const { reason } = useParams();  // Get reason from URL params
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -24,7 +26,7 @@ const LoginPage = () => {
       navigate("/login/signup");  // Navigate to signup page
     } else {
       navigate("/login");  // Navigate to login page
-    }
+    } 
     setIsLogin((prev) => !prev);  // Toggle state
   };
 
@@ -36,14 +38,14 @@ const LoginPage = () => {
         data = await dispatch(loginUser(formData)).unwrap();
         console.log(data);
         if (data?.role === "vendor") navigate("/vendor");
-        else if (data?.role === "user") navigate("/user");
+        else if (data?.role === "user") navigate("/");
         else if (data?.role === "admin") navigate("/admin");
       } else {
         data = await dispatch(signupUser(formData)).unwrap();
-        if (data) {
-          console.log("Signup successful, switching to login mode.");
-          changeLoginStatus();
-        }
+        console.log(data.user.role)
+        if (data.user?.role === "vendor") navigate("/vendor");
+        else if (data.user?.role === "user") navigate("/auth/login");
+        else if (data.user?.role === "admin") navigate("/admin");
       }
     } catch (err) {
       console.error("Error during authentication:", err);

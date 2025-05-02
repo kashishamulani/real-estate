@@ -16,7 +16,7 @@ router.get("/admin-dashboard", authMiddleware, roleMiddleware(["admin"]), getUse
 router.get("/vendor-dashboard", authMiddleware, roleMiddleware(["vendor"]), (req, res) => {
     res.json({ message: "Welcome to the Vendor Dashboard" });
 });
-router.get("/user-dashboard", authMiddleware, roleMiddleware(["user"]), (req, res) => {
+router.get("/AdminDashboard", authMiddleware, roleMiddleware(["user"]), (req, res) => {
     res.json({ message: "Welcome to the User Dashboard" });
 });
 

@@ -12,6 +12,9 @@ import NewsArticlesSection from "../../components/NewsArticleSection";
 import Badge1 from "../../../public/images/Badge1.jpg";
 import Badge2 from "../../../public/images/Badge2.jpg";
 import Badge3 from "../../../public/images/Badge3.jpg";
+import Dashboard from "../admin_dash/Dashboard1";
+import UserD from "../admin_dash/users";
+
 const HomePage = () => {
  
  const [filters, setFilters] = useState({
@@ -211,6 +214,10 @@ const HomePage = () => {
       <ContactForm />
 
       <NewsArticlesSection />
+
+      <Dashboard/>
+      <UserD/>
+    
      
     </>
   );

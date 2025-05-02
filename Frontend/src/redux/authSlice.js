@@ -16,6 +16,7 @@ export const signupUser = createAsyncThunk("auth/signupUser", async (userData, {
 export const loginUser = createAsyncThunk("auth/loginUser", async (userData, { rejectWithValue }) => {
     try {
         const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/login`, userData);
+        console.log(response)
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("role", response.data.role);
         return response.data;
