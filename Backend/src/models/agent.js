@@ -25,6 +25,7 @@ const agentSchema = new mongoose.Schema({
     googleURL: String,
     linkedinURL: String,
     profileImage: String
+    
 });
 
 export default mongoose.model("Agent",agentSchema)
