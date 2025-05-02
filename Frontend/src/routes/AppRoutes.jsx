@@ -52,6 +52,7 @@ import PropertyPublic from "../pages/public/PropertyPublic";
 import ProjectsPage from "../pages/public/ProjectsPage";
 import ProjectDetailsPage from "../pages/public/ProjectDetailsPage";
 import BlogDetailPublic from "../pages/public/components/BlogDetailPublic";
+import { UserTable } from "../pages/admin/user-table";
 
 
 const getDashboardRoute = (role) => {
@@ -144,6 +145,7 @@ const router = createBrowserRouter([
     ),
     children: [
       { index: true, element: <AdminHomePage /> },
+      {path:"userlist", element:<UserTable/>},
       {
         path: "blogs",
         element: <Blogs />,

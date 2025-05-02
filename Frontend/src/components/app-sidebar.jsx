@@ -308,7 +308,7 @@ const data = {
       icon: BookOpen,
       allowedRoles: ["admin", "vendor"],
       items: [
-        { title: "All Projects", url: "/admin/projects" },
+        { title: "All vendor", url: "/vendor" },
         { title: "Project Types", url: "/admin/projects/project-types" },
         { title: "Project Features", url: "/admin/projects/project-features" },
       ],
